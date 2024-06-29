@@ -18,7 +18,8 @@ module.exports = {
     rules: [
       {
         test: /\.scene$/,
-        use: "webpack-webtaletoolkit-loader.js",
+        use: "wtsLoader",
+        exclude: /node_modules/,
       },
       {
         test: /\.ts$/,

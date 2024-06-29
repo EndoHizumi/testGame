@@ -19,6 +19,7 @@
     "html-minifier": "^4.0.0",
     "html-to-json-parser": "^2.0.1",
     "html-webpack-plugin": "^5.6.0",
-    "webtalekit": "file:../webTaleKit/dist/webtalekit-0.1.0.tgz"
+    "webtalekit": "file:../webTaleKit/webtalekit-0.1.0.tgz",
+    "wtsloder": "file:../webTaleKit/wtsloder-0.1.0.tgz"
   }
 }
