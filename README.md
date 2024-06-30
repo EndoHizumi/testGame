@@ -2,7 +2,12 @@
 
 ## setup
 
-1. build webTaleKit.
+1. clone this repository
+   ```bash
+   $ git clone https://github.com/EndoHizumi/testGame.git
+   ```
+
+3. build webTaleKit.
 
 ```bash
 $ git clone https://github.com/EndoHizumi/webTaleKit.git
@@ -12,7 +17,7 @@ $ npm install && npm run build
 
 When you run the command, the file "webtalekit-0.1.0.tgz" should have been generated.
 
-2. install to webTaleKit from testGame
+3. install to webTaleKit from testGame
 
 ```bash
 $ npm install { webtalekit-0.1.0.tgz path }
