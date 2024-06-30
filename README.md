@@ -6,7 +6,7 @@
 
 ```bash
 $ git clone https://github.com/EndoHizumi/webTaleKit.git
-$ cd webtalekit 
+$ cd webTaleKit 
 $ npm install && npm run build
 ```
 
