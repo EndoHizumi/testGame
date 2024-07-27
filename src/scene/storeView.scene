@@ -1,0 +1,20 @@
+<scene name="ストア表示テスト">
+    <script>
+        import { generateStore } from 'webTaleKit/src/utils/store';
+        export const userStore = generateStore();
+        export const sceneConfig = {
+            background: './src/resource/background/sample.jpg',
+            template: './src/screen/title.html',
+        }
+    </script>
+    <scenario>
+        <text>
+            Storeを使うと他のSceneファイルと変数を共有する事が出来ます。<br />
+        </text>
+        <show src="./src/resource/picture/storeView.png" x="50" y="100" width="853" height="529"></show>
+        <text>
+            これを実行すると、以下のようになります。※ストアをexportすることを忘れないでください。<br />
+            userStore.otherSceneValue: {{ userStore.otherSceneValue }}<br />
+        </text>
+    </scenario>
+</scene>

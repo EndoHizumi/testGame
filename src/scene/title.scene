@@ -1,35 +1,50 @@
 <scene name="プロローグ">
-  <logic>
-    export const sceneConfig={
-    background: './src/resource/background/sample.jpg',
-    template: './src/screen/title.html',
-    bgm: './src/resource/bgm/maou_game_village05.mp3',
+  <script>
+    export const sceneConfig = {
+      background: './src/resource/background/sample.jpg',
+      template: './src/screen/title.html',
+      bgm: './src/resource/bgm/maou_game_village05.mp3',
     }
-  </logic>
+  </script>
   <scenario>
-    <choice prompt="プロローグをスキップしますか？">
-      <item label="はい">
-        <jump index="1"></jump>
+    <newpage />
+    <show src="./src/resource/character/03_natuiroKarin/01_basic.png" name="karin" pos="center:middle" />
+    <say name='花梨'>立花ー。きたわよ。</say>
+    <show src="./src/resource/character/03_natuiroKarin/03_hukigen.png" name="karin" pos="center:top" />
+    <say name='花梨'>って、居ないじゃない。</say>
+    <show name="karin" pos="right:top" />
+    <show src="./src/resource/character/04_koharuRikka/01_basic.png" name="rikka" pos="left:top" look="true" />
+    <say name="立花">先輩、こんにちわ～</say>
+    <say name="花梨">こんにちわ～じゃないわよ、なんで呼んだ本人が遅れてくるのよ</say>
+    <show src="./src/resource/character/04_koharuRikka/02_egao.png" name="rikka" pos="left:top" look="true" />
+    <say name="立花">まぁまぁ、先輩、主役は遅れてやってくるものですよ</say>
+    <show src="./src/resource/character/03_natuiroKarin/04_tameiki.png" name="karin" pos="right:middle" />
+    <say name="花梨">もういいわ。それで、何の用よ。</say>
+    <show src="./src/resource/character/04_koharuRikka/01_basic.png" name="rikka" pos="left:top" look="true" />
+    <say name="立花">webTaleKitって、知っています？</say>
+    <show src="./src/resource/character/03_natuiroKarin/01_basic.png" name="karin" pos="right:middle" />
+    <say name="花梨">知らないわね。なにそれ？</say>
+    <show src="./src/resource/character/04_koharuRikka/03_kirakira.png" name="rikka" pos="left:middle" look="true" />
+    <say name="立花">
+      これはですね。Webフロントエンジニア向けのノベルゲームエンジンなんですよ！主にTypeScriptを使って、書かれていて、Webアプリをつくる感覚で作れるんです！まず、UIはHTMLなので、CSSを駆使することも可能です。シナリオもHTMLベースの専用Scriptで楽々コーディング！ロジック部分は慣れ親しんだTypeScriptで記述できるから、サクッとノベルゲームが作れる優れものなんですよ！
+    </say>
+    <say name='花梨'>へー、こういうのって、大体、プログラミング不要って言うもんじゃないの？</say>
+    <show src="./src/resource/character/04_koharuRikka/01_basic.png" name="rikka" pos="left:top" look="true" />
+    <say name="立花">逆に言うと、プログラマー向けってないじゃないですか。</say>
+    <show src="./src/resource/character/03_natuiroKarin/05_komari.png" name="karin" pos="right:middle" look="true" />
+    <say name="花梨">だって、自分で作れるじゃない。必要あるの？</say>
+    <show src="./src/resource/character/04_koharuRikka/04_kuwa.png" name="rikka" pos="left:middle" look="true" />
+    <show src="./src/resource/character/03_natuiroKarin/06_awawa.png" name="karin" pos="right:middle" />
+    <say name="立花">大ありですよ！！何言ってるんですか！！いくら、技術に長けているから、ゼロから作るのは、楽じゃないですよ！特にゲームなんて、普段の業務では作りませんし！！</say>
+    <say name="花梨">業務って何！？</say>
+    <choice prompt=''>
+      <item label='業務は業務だよ'>
+        <show src="./src/resource/character/03_natuiroKarin/07_akire.png" name="karin" pos="right:middle" />
+        <say name="花梨">そ、そうなのね・・・</say>
       </item>
-      <item label="いいえ"></item>
+      <item label='時を戻そう'>
+        <jump index="0" />
+      </item>
     </choice>
-    夏の陽気が残る９月の初旬
-    <say name="燈火">「先輩、別れてください」</say>
-    <say name="智樹">「え、ごめん。今･･･なんて」</say>
-    聞き取れなかったわけじゃない。 言われた意味が分からなかった。 理解したくなかった。
-    <say name="燈火">「最初から好きじゃなかったんです･･･」
-    </say>
-    <say name="智樹">「「そんな･･･そんなこと･･･」</say>
-    <text>
-      視界が揺らぎ、自分が立っているのか分からなくなる。<br />
-      額からはイヤな汗が首筋を伝わり落ちる。<br />
-      これは夢だとそうも思いたかった。<br />
-      目が覚めて、授業中に寝てしまって、みんなで昼飯をとって、そんないつも通りに生活があるんだと。<br />
-      だが、そんな都合のいい現実は有るはずがないのだ。<br />
-      そして、すれ違い瞬間、最後の言葉が俺の耳に届いた。<br />
-    </text>
-    <say name="燈火">
-      「さよなら･･･」
-    </say>
   </scenario>
 </scene>

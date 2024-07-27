@@ -1,0 +1,39 @@
+<scene name="API呼び出しテスト">
+    <script>
+        export const sceneConfig = {
+            background: './src/resource/background/sample.jpg',
+            template: './src/screen/title.html',
+            bgm: './src/resource/bgm/maou_game_village05.mp3',
+        }
+
+    </script>
+    <scenario>
+        REST API呼び出しのテストです。
+        このシーンでは、HTTP POSTリクエストを送信し、その結果を表示します。
+        <text post="https://httpbin.org/post">
+            <header>
+                <x-api-key>$ANTHROPIC_API_KEY</x-api-key>
+                <anthropic-version>2023-06-01</anthropic-version>
+                <content-type>application/json</content-type>
+            </header>
+            <data>
+                <model>claude-3-5-sonnet-20240620</model>
+                <max-tokens>1024</max-tokens>
+                <messages>
+                    <role>user</role>
+                    <content>Hello, world</content>
+                </messages>
+            </data>
+            <progress>
+                https://httpbin.org/postにPOSTリクエストを送信します。
+            </progress>
+            <then>
+                {{res.json}}
+            </then>
+            <error>
+                API呼び出しに失敗しました。
+            </error>
+        </text>
+        <route to="storeSet" />
+    </scenario>
+</scene>

@@ -1,0 +1,19 @@
+<scene name="ストア設定テスト">
+    <script>
+        import { generateStore } from 'webTaleKit/src/utils/store';
+        export const userStore = generateStore();
+        userStore.set('otherSceneValue', '他のSceneファイルからの値です。');
+        export const sceneConfig = {
+            background: './src/resource/background/sample.jpg',
+            template: './src/screen/title.html'
+        }
+    </script>
+    <scenario>
+        <show src="./src/resource/picture/storeSet.png" x="50" y="100" />
+        <text>
+            Storeを使うと他のSceneファイルと変数を共有する事が出来ます。<br />
+            scriptセクションでストアを作成し、そのストアでsetを呼び出すことで、値を保存できます。<br />
+        </text>
+        <route to="storeView" />
+    </scenario>
+</scene>

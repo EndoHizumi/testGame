@@ -5,6 +5,7 @@ const FileManagerPlugin = require("filemanager-webpack-plugin");
 module.exports = {
   mode: "development",
   entry: "./src/index.js", // エントリーポイントのファイル
+  devtool: "source-map",
   output: {
     publicPath: "/",
     filename: "bundle.js", // 出力ファイル名
@@ -24,6 +25,10 @@ module.exports = {
     port: 8080,
     headers: {
       "Feature-Policy": "autoplay 'self'",
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+      // prettier-ignore
+      "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization",
     },
   },
   plugins: [
@@ -33,14 +38,6 @@ module.exports = {
     }),
     new FileManagerPlugin({
       events: {
-        onStart: {
-          move: [
-            {
-              source: path.resolve(__dirname, "node_modules/webtalekit/src/"),
-              destination: path.resolve(__dirname, "./src/runtime/"),
-            },
-          ],
-        },
         onEnd: {
           copy: [
             {
@@ -50,15 +47,6 @@ module.exports = {
             {
               source: path.resolve(__dirname, "./src/screen"),
               destination: path.resolve(__dirname, "dist/src/screen"),
-            },
-          ],
-          move: [
-            {
-              source: path.resolve(__dirname, "./src/runtime"),
-              destination: path.resolve(
-                __dirname,
-                "node_modules/webtalekit/src/"
-              ),
             },
           ],
         },
