@@ -5,9 +5,9 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "play": "rimraf dist && ls -1 ./src/scene/* | xargs -i{} npx wtc {} ./src/js/ && npx webpack serve --open --mode development",
-    "dev": "rimraf dist && ls -1 ./src/scene/* | xargs -i{} npx wtc {} ./src/js/ && npx webpack serve --mode development",
-    "build": "rimraf dist && ls -1 ./src/scene/* | xargs -i{} npx wtc {} ./src/js/ && webpack --mode production && rm -rf ./src/js/"
+    "play": "rimraf dist && npx wtc ./src/scene/ ./src/js/ && npx webpack serve --open --mode development",
+    "dev": "rimraf dist && npx wtc ./src/scene/ ./src/js/ && npx webpack serve --mode development",
+    "build": "rimraf dist && npx wtc ./src/scene/ ./src/js/ && webpack --mode production"
   },
   "author": "EndoHizumi",
   "license": "ISC",
@@ -22,6 +22,6 @@
   "dependencies": {
     "html-webpack-plugin": "^5.6.0",
     "storejs": "^2.1.0",
-    "webtalekit": "^0.2.3"
+    "webtalekit": "^0.2.4"
   }
 }
