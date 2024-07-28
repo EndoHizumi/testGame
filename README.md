@@ -1,43 +1,31 @@
 # testGame
 
-## setup
+## 動作確認手順
 
-1. clone this repository
-   ```bash
-   $ git clone https://github.com/EndoHizumi/testGame.git
-   ```
-
-3. build webTaleKit.
+1. このレポジトリをクローン
 
    ```bash
-   $ git clone https://github.com/EndoHizumi/webTaleKit.git
-   $ cd webTaleKit 
-   $ npm install && npm run build
+   git clone https://github.com/EndoHizumi/testGame.git
    ```
 
-When you run the command, the file "webtalekit-0.1.0.tgz" should have been generated.
-
-3. install to webTaleKit from testGame
+2. 必要なモジュールをインストール
 
    ```bash
-   $ npm install { webtalekit-0.1.0.tgz path }
+   npm install
    ```
 
-setup complete!!
-
-## how to run
-
-1. execute command.
+3. ゲームを実行する
 
    ```bash
-   $ npm run play
+   npm run play
    ```
 
-When you run the command, the server will start at localhost:8080 and automatically open a browser window. (If you don't want the browser to open automatically, please run the command below instead.)
+    localhost:8080 で、ブラウザが自動で起動します。
+    別のブラウザを使いたいときは以下のコマンドを実行してください
 
    ```bash
-   $ npm run dev
+   npm run dev
    ```
 
+   以下の画面が表示されれば、起動成功です。
    ![2024-07-01-00-34-43.png](2024-07-01-00-34-43.png)
-If this screen opens, congratulations - you've succeeded!
