@@ -46,5 +46,6 @@
         <jump index="0" />
       </item>
     </choice>
+    <text>現バージョンのデモはここまでです。</text>
   </scenario>
 </scene>
