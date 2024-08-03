@@ -1,4 +1,4 @@
-# sampleGame15
+# testGame
 
 このプロジェクトは、WebTaleKitを使用して作成されたサンプルゲームです。
 
