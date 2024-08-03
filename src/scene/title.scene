@@ -1,54 +1,36 @@
-<scene name="プロローグ">
-  <script>
-    export const sceneConfig = {
-      background: './src/resource/background/sample.jpg',
-      template: './src/screen/title.html',
-      bgm: './src/resource/bgm/maou_game_village05.mp3',
-    }
-  </script>
-  <scenario>
-    <newpage />
-    <text>タップでスタート</text>
-    <sound src="./src/resource/bgm/maou_game_village05.mp3" play="" />
-    <newpage />
-    <show src="./src/resource/character/03_natuiroKarin/01_basic.png" name="karin" pos="center:middle" />
-    <say name='花梨'>立花ー。きたわよ。</say>
-    <show src="./src/resource/character/03_natuiroKarin/03_hukigen.png" name="karin" pos="center:top" />
-    <say name='花梨'>って、居ないじゃない。</say>
-    <show name="karin" pos="right:top" />
-    <show src="./src/resource/character/04_koharuRikka/01_basic.png" name="rikka" pos="left:top" look="true" />
-    <say name="立花">先輩、こんにちわ～</say>
-    <say name="花梨">こんにちわ～じゃないわよ、なんで呼んだ本人が遅れてくるのよ</say>
-    <show src="./src/resource/character/04_koharuRikka/02_egao.png" name="rikka" pos="left:top" look="true" />
-    <say name="立花">まぁまぁ、先輩、主役は遅れてやってくるものですよ</say>
-    <show src="./src/resource/character/03_natuiroKarin/04_tameiki.png" name="karin" pos="right:middle" />
-    <say name="花梨">もういいわ。それで、何の用よ。</say>
-    <show src="./src/resource/character/04_koharuRikka/01_basic.png" name="rikka" pos="left:top" look="true" />
-    <say name="立花">webTaleKitって、知っています？</say>
-    <show src="./src/resource/character/03_natuiroKarin/01_basic.png" name="karin" pos="right:middle" />
-    <say name="花梨">知らないわね。なにそれ？</say>
-    <show src="./src/resource/character/04_koharuRikka/03_kirakira.png" name="rikka" pos="left:middle" look="true" />
-    <say name="立花">
-      これはですね。Webフロントエンジニア向けのノベルゲームエンジンなんですよ！主にTypeScriptを使って、書かれていて、Webアプリをつくる感覚で作れるんです！まず、UIはHTMLなので、CSSを駆使することも可能です。シナリオもHTMLベースの専用Scriptで楽々コーディング！ロジック部分は慣れ親しんだTypeScriptで記述できるから、サクッとノベルゲームが作れる優れものなんですよ！
-    </say>
-    <say name='花梨'>へー、こういうのって、大体、プログラミング不要って言うもんじゃないの？</say>
-    <show src="./src/resource/character/04_koharuRikka/01_basic.png" name="rikka" pos="left:top" look="true" />
-    <say name="立花">逆に言うと、プログラマー向けってないじゃないですか。</say>
-    <show src="./src/resource/character/03_natuiroKarin/05_komari.png" name="karin" pos="right:middle" look="true" />
-    <say name="花梨">だって、自分で作れるじゃない。必要あるの？</say>
-    <show src="./src/resource/character/04_koharuRikka/04_kuwa.png" name="rikka" pos="left:middle" look="true" />
-    <show src="./src/resource/character/03_natuiroKarin/06_awawa.png" name="karin" pos="right:middle" />
-    <say name="立花">大ありですよ！！何言ってるんですか！！いくら、技術に長けているから、ゼロから作るのは、楽じゃないですよ！特にゲームなんて、普段の業務では作りませんし！！</say>
-    <say name="花梨">業務って何！？</say>
-    <choice prompt=''>
-      <item label='業務は業務だよ'>
-        <show src="./src/resource/character/03_natuiroKarin/07_akire.png" name="karin" pos="right:middle" />
-        <say name="花梨">そ、そうなのね・・・</say>
-      </item>
-      <item label='時を戻そう'>
-        <jump index="0" />
-      </item>
-    </choice>
-    <text>現バージョンのデモはここまでです。</text>
-  </scenario>
+<scene name="title">
+    <scenario>
+        <say name="ナレーター">「WebTaleKitへようこそ！」</say>
+        <say name="ナレーター">「これは、WebTaleKitを使用して作成されたサンプルゲームです。」</say>
+        <choice prompt="ゲームを始めますか？">
+            <item label="はい">
+                <jump index="5" />
+            </item>
+            <item label="いいえ">
+                <jump index="16" />
+            </item>
+        </choice>
+        <newpage />
+        <show src="./src/resource/chara/guide.png" name="ガイド" pos="center:middle" />
+        <say name="ガイド">「それでは、簡単なデモをご覧いただきましょう。」</say>
+        <say name="ガイド">「WebTaleKitでは、キャラクターの表示や移動が簡単に行えます。」</say>
+        <moveTo name="ガイド" x="-200" y="0" duration="1" />
+        <say name="ガイド">「このように、滑らかな移動も可能です。」</say>
+        <say name="ガイド">「また、画像にエフェクトを適用することもできます。」</say>
+        <show name="ガイド" pos="center" mono="100" />
+        <say name="ガイド">「モノトーン調にしてみました。他にも様々なエフェクトが使えます。」</say>
+        <hide name="ガイド" />
+        <say name="ナレーター">「以上で、簡単なデモは終了です。」</say>
+        <say name="ナレーター">「WebTaleKitを使って、素晴らしいゲームを作ってください！」</say>
+        <newpage />
+        <text>デモはここで終了です。</text>
+    </scenario>
+    <script>
+        export const sceneConfig = {
+            name: 'title',
+            background: './src/resource/background/title_bg.png',
+            bgm: './src/resource/bgm/title_theme.mp3',
+            template: './src/screen/title.html'
+        }
+    </script>
 </scene>
