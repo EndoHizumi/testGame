@@ -12,7 +12,7 @@
   "dependencies": {
     "html-webpack-plugin": "^5.6.0",
     "storejs": "^2.1.0",
-    "webtalekit-alpha": "file:../webTaleKit/dist/webtalekit-alpha-0.2.10.tgz"
+    "webtalekit-alpha": "^0.2.10"
   },
   "devDependencies": {
     "filemanager-webpack-plugin": "^8.0.0",
