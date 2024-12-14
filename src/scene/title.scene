@@ -1,36 +1,39 @@
-<scene name="title">
-    <scenario>
-        <say name="ナレーター">「WebTaleKitへようこそ！」</say>
-        <say name="ナレーター">「これは、WebTaleKitを使用して作成されたサンプルゲームです。」</say>
-        <choice prompt="ゲームを始めますか？">
-            <item label="はい">
-                <jump index="5" />
-            </item>
-            <item label="いいえ">
-                <jump index="16" />
-            </item>
-        </choice>
-        <newpage />
-        <show src="./src/resource/chara/guide.png" name="ガイド" pos="center:middle" />
-        <say name="ガイド">「それでは、簡単なデモをご覧いただきましょう。」</say>
-        <say name="ガイド">「WebTaleKitでは、キャラクターの表示や移動が簡単に行えます。」</say>
-        <moveTo name="ガイド" x="-200" y="0" duration="1" />
-        <say name="ガイド">「このように、滑らかな移動も可能です。」</say>
-        <say name="ガイド">「また、画像にエフェクトを適用することもできます。」</say>
-        <show name="ガイド" pos="center" mono="100" />
-        <say name="ガイド">「モノトーン調にしてみました。他にも様々なエフェクトが使えます。」</say>
-        <hide name="ガイド" />
-        <say name="ナレーター">「以上で、簡単なデモは終了です。」</say>
-        <say name="ナレーター">「WebTaleKitを使って、素晴らしいゲームを作ってください！」</say>
-        <newpage />
-        <text>デモはここで終了です。</text>
-    </scenario>
-    <script>
-        export const sceneConfig = {
-            name: 'title',
-            background: './src/resource/background/title_bg.png',
-            bgm: './src/resource/bgm/title_theme.mp3',
-            template: './src/screen/title.html'
-        }
-    </script>
+<scene>
+  <scenario>
+    <text>WebTaleKitデモゲームへようこそ！</text>
+    <text>以下の機能デモから、体験したいものを選んでください。</text>
+
+    <choice prompt="どの機能を体験しますか？">
+      <item label="テキスト表示デモ" onSelect="text">
+        <route to="text" />
+      </item>
+      <item label="キャラクター表示デモ" onSelect="character">
+        <route to="character" />
+      </item>
+      <item label="背景変更デモ" onSelect="background">
+        <route to="background" />
+      </item>
+      <item label="音声機能デモ" onSelect="sound">
+        <route to="sound" />
+      </item>
+      <item label="選択肢デモ" onSelect="choice">
+        <route to="choice" />
+      </item>
+      <item label="アニメーションデモ" onSelect="animation">
+        <route to="animation" />
+      </item>
+      <item label="特殊効果デモ" onSelect="effects">
+        <route to="effects" />
+      </item>
+    </choice>
+  </scenario>
+
+  <script>
+    export const sceneConfig = {
+      name: 'title',
+      background: './src/resource/background/title_bg.png',
+      bgm: './src/resource/bgm/title_theme.mp3',
+      template: './src/screen/title.html'
+    }
+  </script>
 </scene>
